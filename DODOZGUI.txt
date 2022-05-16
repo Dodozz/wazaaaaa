@@ -1,0 +1,209 @@
+-- Gui Dodoz
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local MainGUI = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local ImageButton = Instance.new("ImageButton")
+local ImageButton_2 = Instance.new("ImageButton")
+local TextLabel_2 = Instance.new("TextLabel")
+local ImageLabel = Instance.new("ImageLabel")
+local Btools = Instance.new("TextButton")
+local NOCLIP = Instance.new("TextButton")
+local ImageLabel_2 = Instance.new("ImageLabel")
+local ImageLabel_3 = Instance.new("ImageLabel")
+local CLOSEGUI = Instance.new("TextButton")
+local REJOIN = Instance.new("TextButton")
+local ImageLabel_4 = Instance.new("ImageLabel")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ResetOnSpawn = false 
+
+MainGUI.Name = "MainGUI"
+MainGUI.Parent = ScreenGui
+MainGUI.BackgroundColor3 = Color3.fromRGB(55, 32, 58)
+MainGUI.BackgroundTransparency = 0.100
+MainGUI.BorderColor3 = Color3.fromRGB(255, 255, 255)
+MainGUI.Position = UDim2.new(0.0239013564, 0, 0.591410995, 0)
+MainGUI.Size = UDim2.new(0, 527, 0, 324)
+MainGUI.Active = true
+MainGUI.Draggable = true
+
+TextLabel.Parent = MainGUI
+TextLabel.BackgroundColor3 = Color3.fromRGB(121, 42, 152)
+TextLabel.BorderColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.Position = UDim2.new(0.0447533689, 0, -0.106060632, 0)
+TextLabel.Size = UDim2.new(0, 198, 0, 61)
+TextLabel.Font = Enum.Font.DenkOne
+TextLabel.Text = "Dodoz X"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 57.000
+TextLabel.TextWrapped = true
+TextLabel.TextYAlignment = Enum.TextYAlignment.Top
+
+ImageButton.Parent = TextLabel
+ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageButton.BorderColor3 = Color3.fromRGB(255, 255, 255)
+ImageButton.Position = UDim2.new(2.50295782, 0, 0.563338459, 0)
+ImageButton.Size = UDim2.new(0, 7, 0, 324)
+ImageButton.Image = "http://www.roblox.com/asset/?id=173474884"
+ImageButton.ImageColor3 = Color3.fromRGB(160, 0, 181)
+
+ImageButton_2.Parent = TextLabel
+ImageButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageButton_2.BorderColor3 = Color3.fromRGB(255, 255, 255)
+ImageButton_2.Position = UDim2.new(-0.163709238, 0, 0.563338459, 0)
+ImageButton_2.Size = UDim2.new(0, 8, 0, 324)
+ImageButton_2.Image = "http://www.roblox.com/asset/?id=173474884"
+ImageButton_2.ImageColor3 = Color3.fromRGB(160, 0, 181)
+
+TextLabel_2.Parent = MainGUI
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(85, 0, 127)
+TextLabel_2.BorderColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.Position = UDim2.new(0.443099588, 0, -0.064076364, 0)
+TextLabel_2.Size = UDim2.new(0, 74, 0, 32)
+TextLabel_2.Font = Enum.Font.DenkOne
+TextLabel_2.Text = "V.1.0"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextSize = 38.000
+
+ImageLabel.Parent = TextLabel_2
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.BorderColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BorderSizePixel = 0
+ImageLabel.Position = UDim2.new(-0.710038662, 0, 2.3588171, 0)
+ImageLabel.Size = UDim2.new(0, 52, 0, 46)
+ImageLabel.Image = "http://www.roblox.com/asset/?id=7825183411"
+ImageLabel.ImageColor3 = Color3.fromRGB(179, 27, 209)
+ImageLabel.ScaleType = Enum.ScaleType.Fit
+
+Btools.Name = "Btools"
+Btools.Parent = MainGUI
+Btools.BackgroundColor3 = Color3.fromRGB(70, 8, 86)
+Btools.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Btools.Position = UDim2.new(0.0445386395, 0, 0.171317205, 0)
+Btools.Size = UDim2.new(0, 145, 0, 45)
+Btools.Font = Enum.Font.DenkOne
+Btools.Text = "Btools"
+Btools.TextColor3 = Color3.fromRGB(255, 255, 255)
+Btools.TextSize = 58.000
+Btools.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Btools.TextWrapped = true
+Btools.MouseButton1Down:connect(function()
+    for i=2,4 do
+        local btool = Instance.new("HopperBin")
+        btool.BinType=i
+        btool.Parent=game:service("Players").LocalPlayer.Backpack
+    end
+    
+    mouse = game:service("Players").LocalPlayer:GetMouse()
+    tool = Instance.new("Tool")
+    tool.RequieresHandle = false
+    tool.Name = "Unlock tool"
+    tool.Actived:connect(function()
+        if mouse.Target:IsA("BasPart") then
+            mouse.Target.Locked = false
+            print("Unlocked: "..mouse.Target:GetFullName())
+    end
+    end)
+    tool.Parent = game:service("Players").LocalPlayer.Backpack
+    end)
+
+NOCLIP.Name = "NOCLIP"
+NOCLIP.Parent = MainGUI
+NOCLIP.BackgroundColor3 = Color3.fromRGB(70, 8, 86)
+NOCLIP.BorderColor3 = Color3.fromRGB(255, 255, 255)
+NOCLIP.Position = UDim2.new(0.0445142537, 0, 0.352923572, 0)
+NOCLIP.Size = UDim2.new(0, 144, 0, 47)
+NOCLIP.Font = Enum.Font.DenkOne
+NOCLIP.Text = "NOCLIP"
+NOCLIP.TextColor3 = Color3.fromRGB(255, 255, 255)
+NOCLIP.TextSize = 55.000
+NOCLIP.MouseButton1Down:connect(function()
+    local noclipplayer = game:GetService("Players").LocalPlayer
+	local noclipmouse = noclipplayer:GetMouse()
+	
+	local donoclip = false
+	local noclip = false
+	
+	function b_noclip(key)
+		if (key == "b") then
+			if noclip == false then
+				donoclip = true
+				
+				noclip = true
+			elseif noclip == true then
+				donoclip = false
+				
+				noclip = false
+			end
+		end
+	end
+	
+	noclipmouse.KeyDown:connect(b_noclip)
+	
+	game:GetService("Players").LocalPlayer.Character.Head.Touched:connect(function(obj)
+		if obj ~= workspace.Terrain then
+			if donoclip == true then
+				obj.CanCollide = false
+			else
+				obj.CanCollide = true
+			end
+		end
+	end)
+    end)
+
+ImageLabel_2.Parent = MainGUI
+ImageLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel_2.BorderColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel_2.Position = UDim2.new(-0.0423704982, 0, 0.0346890688, 0)
+ImageLabel_2.Size = UDim2.new(0, 13, 0, 305)
+ImageLabel_2.Image = "http://www.roblox.com/asset/?id=6524841656"
+ImageLabel_2.ImageColor3 = Color3.fromRGB(236, 39, 220)
+
+ImageLabel_3.Parent = MainGUI
+ImageLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel_3.BorderColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel_3.Position = UDim2.new(0.999375284, 0, 0.0346890688, 0)
+ImageLabel_3.Size = UDim2.new(0, 13, 0, 305)
+ImageLabel_3.Image = "http://www.roblox.com/asset/?id=6524841656"
+ImageLabel_3.ImageColor3 = Color3.fromRGB(85, 0, 127)
+
+CLOSEGUI.Name = "CLOSEGUI"
+CLOSEGUI.Parent = MainGUI
+CLOSEGUI.BackgroundColor3 = Color3.fromRGB(85, 0, 127)
+CLOSEGUI.BorderColor3 = Color3.fromRGB(255, 255, 255)
+CLOSEGUI.Position = UDim2.new(0.908453166, 0, -0.064076364, 0)
+CLOSEGUI.Size = UDim2.new(0, 28, 0, 35)
+CLOSEGUI.Font = Enum.Font.DenkOne
+CLOSEGUI.Text = "X"
+CLOSEGUI.TextColor3 = Color3.fromRGB(255, 255, 255)
+CLOSEGUI.TextSize = 43.000
+CLOSEGUI.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+CLOSEGUI.TextWrapped = true
+
+ImageLabel_4.Parent = MainGUI
+ImageLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel_4.BackgroundTransparency = 1.000
+ImageLabel_4.Position = UDim2.new(0.343212843, 0, 0.350646228, 0)
+ImageLabel_4.Size = UDim2.new(0, 52, 0, 49)
+ImageLabel_4.Image = "http://www.roblox.com/asset/?id=46369860"
+ImageLabel_4.ImageColor3 = Color3.fromRGB(44, 7, 52)
+
+REJOIN.Name = "REJOIN"
+REJOIN.Parent = MainGUI
+REJOIN.BackgroundColor3 = Color3.fromRGB(70, 8, 86)
+REJOIN.BorderColor3 = Color3.fromRGB(255, 255, 255)
+REJOIN.Position = UDim2.new(0.818707764, 0, 0.976047099, 0)
+REJOIN.Size = UDim2.new(0, 75, 0, 26)
+REJOIN.Font = Enum.Font.DenkOne
+REJOIN.Text = "REJOIN"
+REJOIN.TextColor3 = Color3.fromRGB(255, 255, 255)
+REJOIN.TextSize = 27.000
+
